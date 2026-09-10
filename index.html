@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feliz cumpleaños, mi amor ❤️</title>
+</head>
+<body>
+<script>
+(async function () {
+  try {
+    const respuesta = await fetch('./FelizCumpleMo%C3%B1i');
+    if (!respuesta.ok) throw new Error('No se pudo cargar la carta');
+    const html = await respuesta.text();
+    document.open();
+    document.write(html);
+    document.close();
+  } catch (error) {
+    document.body.innerHTML = '<p style="font-family:sans-serif;text-align:center;padding:40px">No se pudo abrir la carta. Recargá la página ❤️</p>';
+    console.error(error);
+  }
+})();
+</script>
+</body>
+</html>
